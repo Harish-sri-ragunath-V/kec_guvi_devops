@@ -29,18 +29,13 @@ jobs:
         with:
           node-version: 18
           cache: 'npm'
-          cache-dependency-path: './package-lock.json'
 
       - name: Install dependencies
-        run: |
-          cd app
-          npm ci
+        run: npm install
 
       - name: Run tests
         run: |
-          cd app
-          echo "No tests configured yet"
-          # npm test
+         echo "No tests configured yet"
 
 
 # ==========================================
@@ -66,7 +61,7 @@ jobs:
       - name: Build and push Docker image
         uses: docker/build-push-action@v5
         with:
-          context: ./app
+          context: .
           push: true
           tags: |
             ${{ env.IMAGE_NAME }}:latest
