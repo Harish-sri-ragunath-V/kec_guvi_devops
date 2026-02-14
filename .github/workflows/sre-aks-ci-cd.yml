@@ -6,7 +6,7 @@ on:
       - main
 
 env:
-  IMAGE_NAME: hsr077/react-app:1.0
+  IMAGE_NAME: hsr077/react-app
   CLUSTER_NAME: chandru-eks
   REGION: ${{ secrets.AWS_REGION }}
   NAMESPACE: myapp
